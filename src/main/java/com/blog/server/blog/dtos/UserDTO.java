@@ -1,57 +1,30 @@
-package com.blog.server.blog.entities;
+package com.blog.server.blog.dtos;
 
-import java.io.Serializable;
+public class UserDTO {
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "user")
-public class User implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "pkUserId")
 	private Long pkUserId;
 
-	@Column(name = "name")
 	private String name;
+
+	private String userName;
+
+	private String password;
+
+	private String email;
+
+	private String profilePhoto;
 
 	@Override
 	public String toString() {
-		return "User [pkUserId=" + pkUserId + ", name=" + name + ", userName=" + userName + ", password=" + password
+		return "UserDTO [pkUserId=" + pkUserId + ", name=" + name + ", userName=" + userName + ", password=" + password
 				+ ", email=" + email + ", profilePhoto=" + profilePhoto + ", linkedIn=" + linkedIn + ", instagram="
 				+ instagram + ", github=" + github + "]";
 	}
 
-	@Column(name = "userName")
-	private String userName;
-
-	@Column(name = "password")
-	private String password;
-
-	@Column(name = "email")
-	private String email;
-
-	@Column(name = "profile_photo")
-	private String profilePhoto;
-
-	@Column(name = "linkedIn")
 	private String linkedIn;
 
-	@Column(name = "instagram")
 	private String instagram;
 
-	@Column(name = "github")
 	private String github;
 
 	public Long getPkUserId() {

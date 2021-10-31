@@ -34,4 +34,15 @@ public class testDao {
 		manager.persist(user);
 	}
 
+	public User findByUsername(String userName) {
+		return manager.createQuery("from User where username=:username", User.class).setParameter("username", userName)
+				.getSingleResult();
+	}
+
+	public List<Authority> getAuthority(String username) {
+		System.out.println("inside dao");
+		List<Authority> l = manager.createQuery("from Authority where id=1", Authority.class).getResultList();
+		return l;
+	}
+
 }

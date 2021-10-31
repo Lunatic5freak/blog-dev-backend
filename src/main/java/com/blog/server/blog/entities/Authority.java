@@ -22,7 +22,7 @@ public class Authority {
 	private String role;
 
 	@OneToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "pkUserId")
+	@JoinColumn(name = "username")
 	private User user;
 
 	public long getId() {
